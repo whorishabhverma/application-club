@@ -1,0 +1,19 @@
+program link:  https://practice.geeksforgeeks.org/problems/replace-all-0s-with-5/1?fbclid=IwAR3-7o7cjKRclzSB07wsZR-3QPfxAVNTUAK2MboT4YQUmrOShWAI9ZgFwik
+
+
+int convertFive(int n) {
+    // Your code here
+   int i=1,sum=0;
+    while(n){
+        
+        int rem=n%10;
+            if(rem==0)
+                rem=5;
+        sum=sum+rem*i;
+        n=n/10;
+        i=i*10;
+    }
+    return sum;
+    
+    
+}
