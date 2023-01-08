@@ -1,0 +1,94 @@
+probelem 1 : Moves all zeroes to the end of array 
+link : https://practice.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm
+_campaign=move-all-zeroes-to-end-of-array&fbclid=IwAR0hd4VL1ULJcEYZjr7C_hrU8qkAoFfsBcW1USP58sjlll452x2k8nWnGXw
+
+
+
+
+              A):
+              
+void pushZerosToEnd(int arr[], int n) {
+	    // code here
+	    int k=0,temp[n],i;
+	    for(i=0;i<n;i++)
+	    {
+	        if(arr[i]!=0)
+	        temp[k++]=arr[i];
+	    }
+	    while(k<n)
+	    {
+	        temp[k++]=0;
+	    }
+	    for(i=0;i<n;i++){
+	        arr[i]=temp[i];
+	    }
+	    
+	}
+      
+             B):
+
+ void pushZerosToEnd(int arr[], int n) {
+	   
+	    int nonzero=0;
+	    for(int i=0;i<n;i++)
+	    {
+	        if(arr[i]!=0)
+	            swap(arr[i],arr[nonzero++]);
+	    }
+	}
+  
+  Problem 2: Find the element that appears once
+  link: https://practice.geeksforgeeks.org/problems/element-appearing-once2552/0?company[]=Qualcomm&company[]=Qualcomm&difficulty[]=1&page=1&query=company[]Qualcommdifficulty[]1page1company[]Qualcomm&utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=element-
+  appearing-once&fbclid=IwAR0TJk925bq8KbrchfpbQisPKUzzz_3PvELGp2PCbtimGzkxxU_Z_hPBXpM
+ 
+ 
+       A):
+ int search(int arr[], int n){
+	     unordered_map<int, int> mp;
+ 
+    // Traverse through array elements and
+    // count frequencies
+    for (int i = 0; i < n; i++)
+        mp[arr[i]]++;
+        
+   for (auto ele : mp)
+        if(ele.second==1)
+        return ele.first;
+}
+
+
+
+    B):
+int search(int arr[], int n){
+	    int x=0;
+	    for(int i=0;i<n;i++)
+	    {
+	        x=x^arr[i];
+	    }
+	    
+	    return x;
+	}   
+  
+  
+  
+  C):
+int search(int arr[], int n){
+	    int i;
+	    for(i=0;i<n-1;i+=2){
+	        if(arr[i]!=arr[i+1]) return arr[i];
+	    }
+	    return arr[i];
+	}  
+  
+  
+  
+    
+    
+
+
+
+
+          
+          
+          
+    
