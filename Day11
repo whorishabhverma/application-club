@@ -1,0 +1,33 @@
+Intersection of two arrays :
+https://leetcode.com/problems/intersection-of-two-arrays/discussion/?fbclid=IwAR0i54GXm0yx__oCdOOQgoTAyRNMRPJPqNnMhL2X7R29tyH22u0l3zBSktE
+
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+     set<int>s1;
+     set<int>s2;
+     vector<int> v,vec;
+     map<int,int> mp;
+     for(auto ele:nums1)
+        s1.insert(ele);
+     for(auto ele:nums2)
+        s2.insert(ele);
+      
+      for(auto ele:s1)
+        v.push_back(ele);
+      for(auto ele:s2)
+        v.push_back(ele);  
+
+
+
+      for(auto ele:v)
+        mp[ele]++;
+
+      for (auto x : mp)
+        if(x.second==2)
+        vec.push_back(x.first);
+
+      return vec;  
+      
+    }
+};
