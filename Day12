@@ -1,0 +1,55 @@
+1. Wave Array
+https://practice.geeksforgeeks.org/problems/wave-array-1587115621/1?fbclid=IwAR0HTLJMUafArKm6ciGKy3E9FF8cc__hDYtVUjaUpntYuepoZ2kQUAQdf8Q
+
+class Solution{
+    public:
+    void convertToWave(int n, vector<int>& arr){
+        int i=0;
+        while(i<n-1)
+        {
+            swap(arr[i],arr[i+1]);
+            i+=2;
+        }
+    }    
+};
+
+
+
+2. Reverse words in a given string
+https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1?fbclid=IwAR22ft0NBX6jUAWhqNJHVMpR_ZJCkB6Z4OML0jtICqys38J5LHyGjr7JfYs
+
+class Solution
+{
+    public:
+    //Function to reverse words in a given string.
+    string reverseWords(string arr) 
+    { 
+        string ans="";
+   
+    int last=arr.length()-1;//28
+  
+    for(int i=arr.length()-1;i>=0;i--)//
+    {
+        if(arr[i]=='.'){//24
+            int j=i+1;//j=25
+            while(j<=last){//24<=28
+                ans.push_back(arr[j]);
+                j++;
+                 
+            }
+            last=i-1;//23,18,10,5,0
+            
+            ans.push_back(arr[i]);
+            
+           
+        }
+    }
+    int i=0;
+        while(i<=last){
+                    ans.push_back(arr[i]);
+                    i++;
+                }
+    return ans;
+        
+    } 
+};
