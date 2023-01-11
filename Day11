@@ -1,4 +1,4 @@
-Intersection of two arrays :
+1. Intersection of two arrays :
 https://leetcode.com/problems/intersection-of-two-arrays/discussion/?fbclid=IwAR0i54GXm0yx__oCdOOQgoTAyRNMRPJPqNnMhL2X7R29tyH22u0l3zBSktE
 
 class Solution {
@@ -31,3 +31,31 @@ public:
       
     }
 };
+
+
+
+2. Duplicate Zeroes
+https://leetcode.com/problems/duplicate-zeros/solutions/?fbclid=IwAR06dcWDGlz-2TbCSokCYOShgL3mcOt2wnqzLWuRyZelFFKji9jGFt4exb8&orderBy=newest_to_oldest
+class Solution {
+public:
+    void duplicateZeros(vector<int>& arr) {
+
+        vector<int> vec;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]==0){
+                vec.push_back(arr[i]);
+                vec.push_back(0);
+            }
+            
+            else
+            vec.push_back(arr[i]);
+            
+            
+            }
+            
+            for(int i=0;i<arr.size();i++)
+                arr[i]=vec[i];
+    }
+};
+
+
