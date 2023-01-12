@@ -1,0 +1,45 @@
+Problem 1 :
+
+Count Prefixes of a Given String
+https://leetcode.com/problems/count-prefixes-of-a-given-string/description/?fbclid=IwAR1ux-IWy7NoW_-i48Gflnq
+H3FDDBZ7nL9Of7Q_OxW7a8HHlz2C_dDKdnMo
+
+class Solution {
+    public int countPrefixes(String[] words, String s) {
+        int count=0;
+        int n=words.length;
+       
+        for(int i=0;i<n;i++)
+        {
+        
+            if(s.startsWith(words[i]))
+            count++;
+        }
+return count;
+        
+    }
+}
+
+
+
+Problem 2 :
+First element to occur k times
+https://practice.geeksforgeeks.org/problems/first-element-to-occur-k-times5150/1?fbclid=IwAR0c5622BYUWQ65vhedWyqSyA3FrlFdIzDQKtNT6Rlwt-EvYvaxxpaO_N00
+
+
+int firstElementKTime(int a[], int n, int k)
+    {
+        unordered_map<int,int>ans;
+
+        for(int i=0;i<n;i++){
+
+            ans[a[i]]++;
+
+            if(ans[a[i]]==k)
+
+            return a[i];
+
+        }
+
+        return -1;
+    }
