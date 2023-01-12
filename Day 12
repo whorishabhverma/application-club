@@ -4,6 +4,8 @@ Count Prefixes of a Given String
 https://leetcode.com/problems/count-prefixes-of-a-given-string/description/?fbclid=IwAR1ux-IWy7NoW_-i48Gflnq
 H3FDDBZ7nL9Of7Q_OxW7a8HHlz2C_dDKdnMo
 
+
+Approach 1 :
 class Solution {
     public int countPrefixes(String[] words, String s) {
         int count=0;
@@ -19,6 +21,30 @@ return count;
         
     }
 }
+
+
+
+
+Approach 2 :
+class Solution {
+public:
+    int countPrefixes(vector<string>& words, string s) {
+       string ans="";
+       int count=0;
+       for(int i=0;i<s.length();i++)
+       {
+           ans.push_back(s[i]);
+           for(int j=0;j<words.size();j++)
+           {
+               if(ans==words[j])
+               count++;
+           }
+       } 
+       return count;
+    }
+};
+
+
 
 
 
