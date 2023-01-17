@@ -1,0 +1,29 @@
+Problem: Find the highest number
+Link: https://practice.geeksforgeeks.org/problems/find-the-highest-number2259/1?fbclid=IwAR16-6OWRR_PX7C5byraZRQBkwur6yzQ6dCVypROSsbGE2BN6OIvklOWH7o
+
+class Solution {
+public:
+    int findPeakElement(vector<int>& a) 
+    {
+              /*  int i,n=a.size();
+             for(i=0;i<=n-2;i++) 
+              if(a[i]>a[i+1]){
+                return a[i];
+                break;
+             }
+            return a[i];
+             */
+    
+    int s=0,e=a.size()-1;
+    while(s<=e)
+    {
+        int mid=s+(e-s)/2;
+        if(a[mid]<a[mid-1])
+        e=mid-1;
+        else if(a[mid]<a[mid+1])
+        s=mid+1;
+        else
+        return a[mid];
+    }
+   }
+}; 
