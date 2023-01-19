@@ -1,0 +1,25 @@
+problem 1 :-   Check if All Characters Have Equal Number of Occurrences
+link :-   https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/solutions/?orderBy=newest_to_oldest
+
+
+class Solution {
+public:
+    bool areOccurrencesEqual(string s) {
+        set<int> arr;
+        unordered_map<char,int> mp;
+        for(int i=0;i<s.size();i++)
+        {
+            mp[s[i]]++;
+        }
+        for(auto ele:mp){
+            arr.insert(ele.second);
+            }
+        if(arr.size()==1)
+        return true;
+        else
+        return false;
+
+
+        
+    }
+};
