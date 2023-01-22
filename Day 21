@@ -1,0 +1,49 @@
+Valid Palindrome
+https://leetcode.com/problems/valid-palindrome/?fbclid=IwAR1NsdE-X5Z4sRkvQWRBknfHtmCy-wDVHWC4zKH5MjfJxCkCfNTkhA90nNE
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        vector<char> v,a;
+        for(int i=0;i<s.size();i++)
+            if( (s[i]<=90 && s[i]>=65) || (s[i]>=97 && s[i]<=122) || (s[i]>=48 && s[i]<=57) )
+            v.push_back(tolower(s[i]));
+        
+         a = v;
+
+        reverse(a.begin(),a.end());
+        if(a==v) return true;
+        else return false;
+
+
+    }
+};
+
+
+
+Counting Bits
+https://leetcode.com/problems/counting-bits/?fbclid=IwAR0YNjMKR9p-XjIbE78NJyl1erw_iTjNKgjVz75wgKfFjB2DXFtQ0mjZHKw
+class Solution {
+public:
+int countOnes(int n){
+    int rem=0;
+    while(n)
+    {
+        rem+=n%2;
+        //as we know rem will be 0 and 1 here always so count rem  will 
+        //generate number of ones
+        n=n/2;
+    }
+    return rem;
+    
+}
+    vector<int> countBits(int n) {
+    vector<int> v;
+    int sum=0;
+    for(int i=0;i<=n;i++)
+    {
+        v.push_back(countOnes(i));
+    }
+    return v;
+
+    }
+};
