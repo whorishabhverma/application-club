@@ -1,0 +1,43 @@
+Problem 1:  88. Merge sorted array
+https://leetcode.com/problems/merge-sorted-array/?fbclid=IwAR3LNzZ3zTvQa_j1Jg9vOM3vGbC2RGNPqOJVtG5AesLFD-972IFIr7-EWfs
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+       for(int i=0;i<n;i++)
+            nums1[i+m]=nums2[i];
+        sort(nums1.begin(),nums1.end());
+        
+       
+
+
+        
+    }
+};
+
+
+
+
+Problem 2:  2410. Maximum Matching of Players With Trainers
+https://leetcode.com/problems/maximum-matching-of-players-with-trainers/description/
+
+class Solution {
+public:
+    int matchPlayersAndTrainers(vector<int>& players, vector<int>& trainers) {
+        sort(players.begin(),players.end());
+        sort(trainers.begin(),trainers.end());
+        int i=0,j=0,count=0;
+        while(i<players.size() && j<trainers.size()){
+            if(players[i]<=trainers[j]){
+                count++;
+                i++; j++;
+            }
+            else
+            j++;
+
+
+
+
+        }
+        return count;
+    }
+};
