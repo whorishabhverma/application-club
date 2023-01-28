@@ -1,0 +1,50 @@
+Probelem 1 : Sum of unique elements :
+https://leetcode.com/problems/sum-of-unique-elements/
+class Solution {
+public:
+    int sumOfUnique(vector<int>& nums) {
+         unordered_map<int, int> mp;
+         int sum=0;
+ 
+    // Traverse through array elements and
+    // count frequencies
+    for (int i = 0; i < nums.size(); i++)
+        mp[nums[i]]++;
+        
+    for(auto x:mp)
+    {
+        if(x.second == 1)
+        {
+            sum+=x.first;
+        }
+    } 
+    return sum;   
+    }
+};
+
+probelm 2 : Find the K-Beauty of a Number
+https://leetcode.com/problems/find-the-k-beauty-of-a-number/solutions/?orderBy=newest_to_oldest
+
+class Solution {
+public:
+    int divisorSubstrings(int num, int k) {
+        int i=0,j=0,count=0,temp;
+        string q=to_string(num);// converting int to string
+        string str="";
+     while(j<q.length()){
+         str+=q[j];// calculations when j move
+         if(j-i+1 < k)
+            j++;
+         else if(j-i+1 ==k ){// hit window
+             temp = stoi(str);// convert window string to int 
+            if( temp != 0 && num % temp == 0  )
+                count++; //calculations from answer
+            str.erase(str.begin());    // slide window
+            i++;   j++;
+        }     
+
+     }
+     return count;   
+        
+    }
+};
