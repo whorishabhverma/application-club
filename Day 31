@@ -1,0 +1,44 @@
+162. Find Peak Element
+class Solution {
+public:
+    int findPeakElement(vector<int>& arr) {
+        int n=arr.size()-1;
+        int low=0,high=n;
+        while(low<high){
+            int mid=low+(high-low)/2;
+            if(arr[mid]<arr[mid+1])
+                low=mid+1;
+            else 
+                high=mid;    
+        }
+       return low; 
+    }
+};
+
+
+
+303. Range Sum Query - Immutable
+class NumArray {
+public:
+    vector<int> ans;
+    NumArray(vector<int>& nums) {
+        int sum=0;
+       for(int i=0;i<nums.size();i++){
+            sum = sum + nums[i];
+            ans.push_back(sum); 
+        }  
+    }
+    
+    int sumRange(int left, int right) {
+        if(left==0)
+            return ans[right];
+        else    
+            return ans[right]-ans[left-1];
+        }
+};
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray* obj = new NumArray(nums);
+ * int param_1 = obj->sumRange(left,right);
+ */
